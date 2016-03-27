@@ -1,24 +1,22 @@
 <template name="creditCard">
   <form id="billing-creditcard">
     <div class="credit-card">
-      <h2>{{t9n "Billing Info"}} <img src="//d1g3fc5n8s9pjg.cloudfront.net/img/credit-cards.png"></h2>
+      <h2>Billing Info <img src="//d1g3fc5n8s9pjg.cloudfront.net/img/credit-cards.png"></h2>
       <div class="form-section">
-        {{#if requireName}}
         <div class="form-group">
           <div class="row">
             <div class="col-xs-6">
-              <label>{{t9n "First Name"}}</label>
+              <label>First Name</label>
               <input type="text" name="cc-firstname" class="form-control" placeholder="First Name" required/>
             </div>
             <div class="col-xs-6">
-              <label>{{t9n "Last Name"}}</label>
+              <label>Last Name</label>
               <input type="text" name="cc-lastname" class="form-control" placeholder="Last Name" required/>
             </div>
           </div>
         </div>
-        {{/if}}
         <div class="form-group">
-          <label>{{t9n "Card Number"}}</label>
+          <label>Card Number</label>
           <input parsley-type="number" name="cc-num" class="form-control" placeholder="Card Number" parsley-luhn="true" parsley-luhn-message="Please entere a valid credit card number" required />
         </div>
         <div class="row">
@@ -44,16 +42,15 @@
           </div>
           <div class="col-md-5">
             <div class="form-group">
-              <label>{{t9n "Card Code"}} <img src="//d1g3fc5n8s9pjg.cloudfront.net/img/cvc.png"></label>
+              <label>Card Code <img src="//d1g3fc5n8s9pjg.cloudfront.net/img/cvc.png"></label>
               <input parsley-type="number" name="cc-cvc" class="form-control" placeholder="CVC" required/>
             </div>
           </div>
         </div>
-        {{#if requireAddress}}
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label>{{t9n "Address"}}</label>
+              <label>Address</label>
               <input type="text" name="cc-address" class="form-control" placeholder="Address" required>
             </div>
             <div class="row">
@@ -76,65 +73,7 @@
             </div>
           </div>
         </div>
-        {{/if}}
       </div>
     </div>
   </form>
-</template>
-
-<template name="ccForm">
-  <div class='credit-card'>
-    <form id="billing-creditcard">
-      <div class='inputName'>{{t9n "Billing Info"}} <img src="//d1g3fc5n8s9pjg.cloudfront.net/img/credit-cards.png" alt=""></div>
-
-      {{#if requireName}}
-        <div class="cc-name-first">
-          <input type="text" name="cc-firstname" autocomplete='cc-firstname' placeholder="First Name" required />
-          <div class='account-field-label account-label'>{{t9n "First Name"}}</div>
-        </div>
-
-        <div class="cc-name-last">
-          <input type="text" name="cc-lastname" autocomplete='cc-lastname' placeholder="Last Name" required />
-          <div class='account-field-label account-label'>{{t9n "Last Name"}}</div>
-        </div>
-      {{/if}}
-
-      <input parsley-type="number" name="cc-num" autocomplete='cc-num' placeholder="Card Number" parsley-luhn="true" parsley-luhn-message="Please enter a valid credit card number" required />
-      <div class='account-field-label account-label'>{{t9n "Card Number"}}</div>
-
-      <div class='expiration-month'>
-        <input parsley-type="number" min="1" max="12" name="cc-exp-month" autocomplete='cc-exp-month' placeholder="MM" maxlength="2" parsley-rangelength="[2,2]" parsley-rangelength-message="This value should be exactly 2 digits" required />
-        <div class='account-field-label account-label'>Expiration</div>
-      </div>
-      <span> / </span>
-      <div class='expiration-year'>
-        <input parsley-type="number" name="cc-exp-year" autocomplete='cc-exp-year' data-parsley-trigger="keyup" parsley-rangelength="[4,4]" parsley-rangelength-message="This value should be exactly 4 digits" placeholder="YYYY" maxlength="4" required />
-        <div class='account-field-label account-label'></div>
-      </div>
-      <div class='cc-cvc'>
-        <input parsley-type="number" name="cc-cvc" autocomplete='cc-cvc' maxlength="3" required />
-        <div class='account-field-label account-label'>{{t9n "Card Code"}} <img src="//d1g3fc5n8s9pjg.cloudfront.net/img/cvc.png" class="cvc" alt=""></div>
-      </div>
-
-      {{#if requireAddress}}
-      <input type="text" name="cc-address" autocomplete='billing address' required />
-      <div class='account-field-label account-label'>Address</div>
-
-      <div class="cc-city">
-        <input type="text" name="cc-address-city" autocomplete='billing locality' required />
-        <div class='account-field-label account-label'>City</div>
-      </div>
-
-      <div class="cc-state">
-        <input type="text" name="cc-address-state" autocomplete='billing region' required />
-        <div class='account-field-label account-label'>State</div>
-      </div>
-
-      <div class="cc-zip">
-        <input parsley-type="number" type="text" name="cc-address-zip" autocomplete='billing postal-code' parsley-rangelength="[5,5]" parsley-rangelength-message="This value should be exactly 5 digits" required />
-        <div class='account-field-label account-label'>Postal</div>
-      </div>
-      {{/if}}
-    </form>
-  </div>
 </template>

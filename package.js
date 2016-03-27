@@ -1,6 +1,6 @@
 Package.describe({
   name: "billing",
-  summary: "Various billing functionality packaged up.",
+  summary: "Common billing functionality using Authorize.net Payment Gateway.",
   version: "1.0.1"
 });
 
@@ -22,8 +22,7 @@ Package.on_use(function (api, where) {
   ], 'server');
 
   api.use([
-    'coffeescript',
-    'mrt:minimongoid@0.8.8'
+    'coffeescript'
   ], ['client', 'server']);
 
   Npm.depends({
@@ -33,25 +32,16 @@ Package.on_use(function (api, where) {
   });
 
   api.addFiles([
-    'collections/users.coffee'
-  ], ['client', 'server']);
-
-  api.addFiles([
     'client/views/creditCard/creditCard.html',
     'client/views/creditCard/creditCard.less',
-    'client/views/creditCard/creditCard.coffee',
     'client/lib/parsley.css',
     'client/startup.coffee',
     'client/billing.coffee',
     'client/styles.less',
-    'client/i18n/english.coffee'
   ], 'client');
 
   api.addFiles([
     'server/startup.coffee',
     'server/billing.coffee'
   ], 'server');
-
-  api.export('BillingUser', ['server', 'client']);
-
 });

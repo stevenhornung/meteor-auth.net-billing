@@ -2,19 +2,10 @@ replaceWhitespace = (val)->
   val.replace /\s*/g, ""
 
 @Billing =
-  settings:
-    requireAddress: false
-    requireName: false
-    showInvoicePeriod: true
-    showPricingPlan: true
-    invoiceExplaination: ''
-    currency: '$'
-    language: 'en'
-    ddBeforeMm: false #for countries with date format dd/mm/yyyy
+  settings: {}
 
   config: (opts) ->
     @settings = _.extend @settings, opts
-    T9n.language = @settings.language
 
   isValid: ->
     $('form#billing-creditcard').parsley().validate()
