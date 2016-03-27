@@ -12,8 +12,7 @@ Package.on_use(function (api, where) {
     'less',
     'jquery',
     'deps',
-    'natestrauser:parsleyjs@1.1.7',
-    'mrt:accounts-t9n'
+    'natestrauser:parsleyjs@1.1.7'
   ], 'client');
 
   api.use([
